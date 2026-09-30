@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>River Birch — Borehole Drilling, Irrigation & Solar | Bulawayo</title>
+<meta name="description" content="River Birch Pvt Ltd: borehole drilling, capacity testing, irrigation, water filtration and solar installation in Bulawayo, Zimbabwe. Founded 2014.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23102523'/%3E%3Ccircle cx='50' cy='30' r='14' stroke='%23E3A83B' stroke-width='6' fill='none'/%3E%3Cpath d='M50 44 V62 M50 62 Q60 66 70 62 M50 68 Q40 72 30 68' stroke='%232E9C8F' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#102523; --panel:#173330; --panel-2:#1E3D39;
+    --water:#2E9C8F; --water-dark:#1F736A; --sun:#E3A83B; --clay:#B1502A; --sage:#8FA695;
+    --paper:#EFEAE0; --dim:#9FB3AE; --dim-2:#6E827D;
+    --line:rgba(239,234,224,0.14); --line-strong:rgba(239,234,224,0.28);
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--night);color:var(--paper);font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;margin:0;font-weight:600;color:var(--paper);letter-spacing:-0.01em;}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+  ::selection{background:var(--water);color:var(--night);}
+  :focus-visible{outline:2px solid var(--sun);outline-offset:3px;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(16,37,35,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{width:36px;height:36px;flex-shrink:0;}
+  .brand-text{font-family:'Space Grotesk';font-weight:700;font-size:1.02rem;letter-spacing:-0.01em;line-height:1.2;}
+  .brand-text small{display:block;font-family:'Inter';font-weight:500;font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-top:2px;}
+  nav.primary{display:flex;align-items:center;gap:30px;}
+  nav.primary a{font-size:0.86rem;font-weight:500;color:var(--paper);}
+  nav.primary a:hover{color:var(--sun);}
+  .pill{display:inline-flex;align-items:center;gap:9px;background:var(--sun);color:var(--night);padding:12px 24px;border-radius:999px;font-family:'Space Grotesk';font-weight:600;font-size:0.84rem;white-space:nowrap;}
+  .pill:hover{background:#c98f2d;}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+  .menu-toggle span{width:24px;height:2px;background:var(--paper);display:block;}
+  @media (max-width:920px){
+    nav.primary{position:fixed;inset:78px 0 0 0;background:var(--night);flex-direction:column;align-items:flex-start;gap:0;padding:12px 28px 28px;opacity:0;pointer-events:none;transition:opacity .2s;}
+    nav.primary.open{opacity:1;pointer-events:auto;}
+    nav.primary a{width:100%;padding:18px 0;border-bottom:1px solid var(--line);font-size:1.3rem;font-family:'Space Grotesk';}
+    nav.primary .pill{margin-top:18px;width:100%;justify-content:center;}
+    .menu-toggle{display:flex;}
+  }
+
+  /* HERO */
+  .hero{padding:64px 0 96px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  @media (max-width:980px){ .hero-grid{grid-template-columns:1fr;gap:44px;} .hero{padding:40px 0 56px;} }
+  .kicker{display:inline-flex;align-items:center;gap:9px;font-family:'Space Grotesk';font-size:0.8rem;font-weight:600;color:var(--sun);letter-spacing:0.02em;margin-bottom:20px;}
+  .kicker .dash{width:22px;height:1.5px;background:var(--water);display:inline-block;}
+  .hero h1{font-size:clamp(2.3rem,5.2vw,3.7rem);line-height:1.07;}
+  .hero .lede{margin:24px 0 32px;font-size:1.06rem;color:var(--dim);max-width:48ch;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-family:'Space Grotesk';font-weight:600;font-size:0.86rem;border:1.5px solid transparent;}
+  .btn-sun{background:var(--sun);color:var(--night);}
+  .btn-sun:hover{background:#c98f2d;}
+  .btn-ghost{border-color:var(--line-strong);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--paper);}
+  .facts{display:flex;flex-wrap:wrap;gap:30px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line);}
+  .fact{font-size:0.84rem;color:var(--dim-2);}
+  .fact strong{display:block;font-family:'Space Grotesk';font-size:1.1rem;color:var(--paper);font-weight:600;}
+
+  .hero-visual{position:relative;}
+  .hero-visual .frame{border-radius:120px 8px 8px 8px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -26px rgba(0,0,0,.6);}
+  .hero-visual img{width:100%;height:100%;object-fit:cover;}
+  .badge{position:absolute;right:-16px;bottom:28px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 20px;box-shadow:0 20px 40px -18px rgba(0,0,0,.6);display:flex;align-items:center;gap:12px;}
+  .badge .dot{width:9px;height:9px;border-radius:50%;background:var(--water);flex:none;}
+  .badge .t{font-family:'Space Grotesk';font-size:13.5px;font-weight:600;}
+  .badge .s{font-size:12px;color:var(--dim-2);margin-top:2px;}
+  @media (max-width:980px){ .badge{right:10px;bottom:-16px;} }
+
+  section{padding:100px 0;}
+  @media (max-width:640px){ section{padding:64px 0;} }
+  .sec-head{max-width:640px;margin-bottom:46px;}
+  .sec-head .kicker{margin-bottom:14px;}
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);}
+  .sec-head p{margin-top:14px;color:var(--dim);font-size:1.02rem;}
+
+  /* SERVICES */
+  .menu-list{border-top:1px solid var(--line-strong);}
+  .menu-row{display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;padding:28px 0;border-bottom:1px solid var(--line);}
+  .menu-row .n{font-family:'Space Grotesk';font-style:italic;color:transparent;-webkit-text-stroke:1px var(--water);font-size:26px;line-height:1;}
+  .menu-row h3{font-size:1.35rem;}
+  .menu-row p{margin-top:8px;color:var(--dim);font-size:0.96rem;max-width:60ch;}
+  @media (max-width:600px){ .menu-row{grid-template-columns:34px 1fr;} }
+
+  .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px;}
+  @media (max-width:900px){ .photo-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .photo-grid{grid-template-columns:1fr;} }
+  .pg-card{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;}
+  .pg-card.wide{grid-column:span 2;aspect-ratio:auto;}
+  .pg-card img{width:100%;height:100%;object-fit:cover;}
+  .pg-card .cap{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(0deg,rgba(16,37,35,.92),rgba(16,37,35,0));}
+  .pg-card .cap .t{font-family:'Space Grotesk';font-size:0.96rem;font-weight:600;}
+  .pg-card .cap .s{font-size:0.76rem;color:var(--sun);margin-top:2px;}
+  .note{margin-top:26px;padding:16px 20px;border-left:2px solid var(--clay);background:rgba(177,80,42,0.08);font-size:0.88rem;color:var(--dim);border-radius:0 4px 4px 0;}
+  .note strong{color:var(--paper);}
+
+  /* SECTORS */
+  .sectors{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .sector-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+  @media (max-width:820px){ .sector-grid{grid-template-columns:repeat(2,1fr);} }
+  .sector-cell{padding:40px 28px;border-right:1px solid var(--line);}
+  .sector-cell:last-child{border-right:none;}
+  @media (max-width:820px){ .sector-cell:nth-child(2n){border-right:none;} .sector-cell{border-bottom:1px solid var(--line);} }
+  .sector-cell .tag{font-family:'Space Grotesk';font-size:0.74rem;letter-spacing:0.04em;color:var(--sun);text-transform:uppercase;}
+  .sector-cell h4{margin-top:10px;font-size:1.15rem;}
+  .sector-cell p{margin-top:10px;color:var(--dim-2);font-size:0.86rem;}
+
+  /* PROCESS */
+  .process-flow{display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
+  @media (max-width:900px){ .process-flow{grid-template-columns:1fr;gap:34px;} }
+  .flow-line{position:absolute;top:22px;left:6%;right:6%;height:1px;background:repeating-linear-gradient(to right,var(--line-strong) 0 8px,transparent 8px 16px);}
+  @media (max-width:900px){ .flow-line{display:none;} }
+  .flow-step{position:relative;padding-right:24px;}
+  .flow-marker{width:44px;height:44px;border-radius:50%;border:1px solid var(--water);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';color:var(--water);font-size:1rem;background:var(--night);position:relative;z-index:2;margin-bottom:20px;}
+  .flow-step h4{font-size:1.05rem;margin-bottom:8px;}
+  .flow-step p{margin:0;color:var(--dim);font-size:0.9rem;max-width:30ch;}
+
+  /* ABOUT */
+  .about{background:var(--panel-2);}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center;}
+  @media (max-width:900px){ .about-grid{grid-template-columns:1fr;gap:38px;} }
+  .about-photo{border-radius:10px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -24px rgba(0,0,0,.6);}
+  .about-photo img{width:100%;height:100%;object-fit:cover;}
+  .about .kicker{color:var(--sun);}
+  .about p.lead{margin-top:18px;color:var(--dim);font-size:1.04rem;max-width:54ch;}
+  .principles{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);display:flex;gap:28px;flex-wrap:wrap;}
+  .principle{font-size:0.86rem;color:var(--dim);}
+  .principle strong{display:block;color:var(--paper);font-family:'Space Grotesk';font-size:0.98rem;margin-bottom:2px;}
+
+  /* FEATURED PROJECT */
+  .featured{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .featured-grid{display:grid;grid-template-columns:1fr 1fr;}
+  @media (max-width:880px){ .featured-grid{grid-template-columns:1fr;} }
+  .featured-copy{padding:56px;display:flex;flex-direction:column;justify-content:center;}
+  .featured-copy .tag{font-family:'Space Grotesk';font-size:0.78rem;letter-spacing:0.04em;color:var(--sun);}
+  .featured-copy h3{margin-top:12px;font-size:clamp(1.5rem,3vw,2rem);}
+  .featured-copy p{margin-top:14px;color:var(--dim);max-width:44ch;}
+  .featured-meta{display:flex;gap:28px;margin-top:24px;flex-wrap:wrap;}
+  .featured-meta div span{display:block;}
+  .featured-meta div span:first-child{font-size:0.74rem;color:var(--dim-2);}
+  .featured-meta div span:last-child{font-family:'Space Grotesk';font-size:0.98rem;margin-top:4px;}
+  .featured-photo{min-height:320px;overflow:hidden;}
+  .featured-photo img{width:100%;height:100%;object-fit:cover;}
+
+  /* VISIT */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  @media (max-width:900px){ .visit-grid{grid-template-columns:1fr;gap:40px;} }
+  .visit h3{font-size:1.25rem;margin-bottom:18px;}
+  .hours{width:100%;border-collapse:collapse;font-size:0.94rem;}
+  .hours td{padding:10px 0;border-bottom:1px solid var(--line);}
+  .hours td:last-child{text-align:right;color:var(--dim);}
+  .hours tr.today td{color:var(--sun);font-weight:700;}
+  .info-block{margin-top:20px;}
+  .info-block .label{font-family:'Space Grotesk';font-size:0.72rem;letter-spacing:0.06em;color:var(--dim-2);text-transform:uppercase;}
+  .info-block .value{margin-top:6px;font-size:1rem;font-weight:600;}
+  .info-block .value a:hover{color:var(--sun);}
+  .info-block a.dir{display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-size:0.86rem;color:var(--sun);font-weight:600;}
+  .info-block a.dir:hover{text-decoration:underline;}
+
+  /* CTA / QUOTE */
+  .cta-final{background:var(--panel);border-top:1px solid var(--line);}
+  .cta-final .wrap{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;padding:64px 32px;}
+  .cta-final h2{font-size:clamp(1.5rem,3vw,2.1rem);max-width:20ch;}
+  .cta-final p{margin-top:10px;color:var(--dim);max-width:44ch;}
+  .cta-actions{display:flex;gap:14px;flex-wrap:wrap;}
+
+  .field{margin-bottom:20px;}
+  .field label{display:block;font-size:0.82rem;color:var(--dim);margin-bottom:8px;}
+  .field input,.field select,.field textarea{width:100%;background:var(--panel);border:1px solid var(--line-strong);color:var(--paper);padding:13px 14px;font-family:'Inter';font-size:0.96rem;border-radius:6px;transition:border-color .2s ease;}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--water);outline:none;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media (max-width:520px){ .field-row{grid-template-columns:1fr;} }
+  textarea{resize:vertical;min-height:110px;}
+  #quote-form.hidden,#quote-success.hidden{display:none;}
+  #quote-success{border:1px solid var(--line-strong);padding:36px;border-radius:8px;background:var(--panel);}
+  #quote-success h3{font-size:1.25rem;margin-bottom:10px;color:var(--water);}
+  #quote-success p{color:var(--dim);}
+
+  footer{padding:48px 0 30px;border-top:1px solid var(--line);}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:0.82rem;color:var(--dim-2);}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="11" r="6" stroke="#E3A83B" stroke-width="2"/>
+        <line x1="22" y1="17" x2="22" y2="24" stroke="#E3A83B" stroke-width="2"/>
+        <path d="M10 24 H34" stroke="#EFEAE0" stroke-width="2"/>
+        <path d="M22 24 V38" stroke="#2E9C8F" stroke-width="2"/>
+        <path d="M22 30 Q26 32 30 30" stroke="#2E9C8F" stroke-width="2" fill="none"/>
+        <path d="M22 34 Q18 36 14 34" stroke="#2E9C8F" stroke-width="2" fill="none"/>
+      </svg>
+      <span class="brand-text">River Birch<small>Water · Irrigation · Solar</small></span>
+    </a>
+    <nav class="primary" id="primaryNav">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#project">Our work</a>
+      <a href="#visit">Visit</a>
+      <a class="pill" href="#quote">Book a survey</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="kicker"><span class="dash"></span>Water, irrigation &amp; solar engineering — Bulawayo, since 2014</span>
+        <h1>From the sun on your roof to the water under your ground.</h1>
+        <p class="lede">River Birch drills boreholes, tests their capacity, and builds the pumping, irrigation and solar systems that turn that water into something you can rely on — fairly priced and transparently explained.</p>
+        <div class="cta-row">
+          <a class="btn btn-sun" href="#quote">Book a site survey</a>
+          <a class="btn btn-ghost" href="tel:+263774786743">Call 077 478 6743</a>
+        </div>
+        <div class="facts">
+          <div class="fact"><strong>2014</strong>Founded, Belmont, Bulawayo</div>
+          <div class="fact"><strong>5 services</strong>One team, start to tap</div>
+          <div class="fact"><strong>Water · Sun</strong>Drilling to solar backup</div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="frame">
+          <img src="https://images.unsplash.com/photo-1541941392960-652036ca567e?auto=format&fit=crop&w=900&q=80" alt="Water storage tank tower on open ground">
+        </div>
+        <div class="badge">
+          <span class="dot"></span>
+          <span><span class="t" id="openStatus">Open now</span><br><span class="s">Mon–Fri, Belmont, Bulawayo</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker"><span class="dash"></span>Everything between the roof and the water table</span>
+        <h2>Fairly priced, plainly explained</h2>
+        <p>One team for the whole system, start to finish.</p>
+      </div>
+
+      <div class="menu-list reveal">
+        <div class="menu-row">
+          <span class="n">I</span>
+          <div><h3>Borehole drilling &amp; capacity testing</h3><p>Sites surveyed, drilled and tested for real yield before you commit to pumps or storage — so you know what the ground can actually give you.</p></div>
+        </div>
+        <div class="menu-row">
+          <span class="n">II</span>
+          <div><h3>Water pumping &amp; storage</h3><p>Submersible and surface pumps sized correctly, paired with tanks and stands built for the volume your household, farm or site actually needs.</p></div>
+        </div>
+        <div class="menu-row">
+          <span class="n">III</span>
+          <div><h3>Irrigation systems</h3><p>Drip and sprinkler layouts designed around your soil, crop and water source, from a backyard garden to a full commercial field.</p></div>
+        </div>
+        <div class="menu-row">
+          <span class="n">IV</span>
+          <div><h3>Water filtration</h3><p>Filtration fitted to what's actually in your water, so what comes out the tap is safe to drink and gentle on your pipes and appliances.</p></div>
+        </div>
+        <div class="menu-row" style="border-bottom:none;">
+          <span class="n">V</span>
+          <div><h3>Solar equipment &amp; installation</h3><p>Solar-powered pumping and backup power systems sized and installed to keep water and essential loads running through load-shedding.</p></div>
+        </div>
+      </div>
+
+      <div class="photo-grid reveal">
+        <div class="pg-card wide">
+          <img src="https://images.unsplash.com/photo-1668097613572-40b7c11c8727?auto=format&fit=crop&w=1000&q=75" alt="Technician working on a solar panel installation">
+          <div class="cap"><div class="t">Solar Installation</div><div class="s">Panels &amp; backup power</div></div>
+        </div>
+        <div class="pg-card">
+          <img src="https://images.unsplash.com/photo-1692369584496-3216a88f94c1?auto=format&fit=crop&w=700&q=75" alt="Irrigation sprinkler watering a green field">
+          <div class="cap"><div class="t">Irrigation</div><div class="s">Field &amp; garden systems</div></div>
+        </div>
+        <div class="pg-card">
+          <img src="https://images.unsplash.com/photo-1638294834907-d11608bc11d2?auto=format&fit=crop&w=700&q=75" alt="Water storage tower in an open field">
+          <div class="cap"><div class="t">Water Storage</div><div class="s">Tanks &amp; stands</div></div>
+        </div>
+      </div>
+      <div class="note"><strong>Note on fencing:</strong> security fencing &amp; metal fabrication has been mentioned as part of the wider service line-up — worth confirming it's still active before it's added here, since it wasn't listed on every directory we checked. This is a starter concept; the photos above are stock images standing in for River Birch's own site work.</div>
+    </div>
+  </section>
+
+  <!-- SECTORS -->
+  <section class="sectors">
+    <div class="wrap">
+      <div class="sec-head reveal" style="margin-bottom:0;">
+        <span class="kicker"><span class="dash"></span>Who we work with</span>
+        <h2>Built for every kind of site</h2>
+      </div>
+    </div>
+    <div class="sector-grid reveal">
+      <div class="sector-cell"><div class="tag">At home</div><h4>Residential</h4><p>Boreholes, tanks and solar backup for households across Bulawayo.</p></div>
+      <div class="sector-cell"><div class="tag">In the field</div><h4>Agriculture</h4><p>Irrigation and water systems sized for a working farm.</p></div>
+      <div class="sector-cell"><div class="tag">On site</div><h4>Commercial</h4><p>Water and power systems for businesses that can't afford downtime.</p></div>
+      <div class="sector-cell"><div class="tag">Beyond the city</div><h4>Rural sites</h4><p>Jobs across Matabeleland South, including Filabusi district.</p></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker"><span class="dash"></span>How it works</span>
+        <h2>A project runs, start to tap</h2>
+      </div>
+      <div class="process-flow reveal">
+        <div class="flow-line"></div>
+        <div class="flow-step"><div class="flow-marker">1</div><h4>Site survey</h4><p>We assess the ground, the water need and where a borehole is likely to yield.</p></div>
+        <div class="flow-step"><div class="flow-marker">2</div><h4>Drill &amp; test</h4><p>Borehole drilled and capacity-tested so you know the real yield before spending on the rest.</p></div>
+        <div class="flow-step"><div class="flow-marker">3</div><h4>Install the system</h4><p>Pump, storage, irrigation, filtration or solar fitted to match that yield and your usage.</p></div>
+        <div class="flow-step"><div class="flow-marker">4</div><h4>Commission &amp; handover</h4><p>System tested end-to-end and explained clearly before we leave site.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div class="about-photo reveal">
+        <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&w=900&q=80" alt="Technician installing a solar panel on a roof">
+      </div>
+      <div class="reveal">
+        <span class="kicker"><span class="dash"></span>Who we are</span>
+        <h2>Fair, transparent &amp; competent, since 2014.</h2>
+        <p class="lead">River Birch Pvt Ltd has worked across Bulawayo since 2014, growing from borehole drilling into a team that handles water pumping, irrigation, filtration and solar installation as one connected system — priced and explained plainly at every step.</p>
+        <div class="principles">
+          <div class="principle"><strong>Fairly</strong>Priced for the job, not the client</div>
+          <div class="principle"><strong>Transparently</strong>You know what you're paying for</div>
+          <div class="principle"><strong>Competently</strong>One team, the whole system</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section id="project" class="featured">
+    <div class="featured-grid">
+      <div class="featured-copy reveal">
+        <span class="tag">Featured project</span>
+        <h3>Submersible pump installation, Silalatshani</h3>
+        <p>One of River Birch's confirmed jobs beyond Bulawayo itself — a submersible pump installation at Silalatshani, Filabusi, showing the team works across Matabeleland South, not only in the city.</p>
+        <div class="featured-meta">
+          <div><span>Location</span><span>Silalatshani, Filabusi</span></div>
+          <div><span>Scope</span><span>Submersible pump install</span></div>
+        </div>
+      </div>
+      <div class="featured-photo reveal">
+        <img src="https://images.unsplash.com/photo-1638294834907-d11608bc11d2?auto=format&fit=crop&w=900&q=80" alt="Water tower standing in an open rural field">
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker"><span class="dash"></span>Find us</span>
+        <h2>Visit the Belmont office</h2>
+      </div>
+      <div class="visit-grid reveal">
+        <div class="visit">
+          <h3>Hours</h3>
+          <table class="hours" id="hoursTable">
+            <tr data-day="1"><td>Monday</td><td>8:00 AM – 5:00 PM</td></tr>
+            <tr data-day="2"><td>Tuesday</td><td>8:00 AM – 5:00 PM</td></tr>
+            <tr data-day="3"><td>Wednesday</td><td>8:00 AM – 5:00 PM</td></tr>
+            <tr data-day="4"><td>Thursday</td><td>8:00 AM – 5:00 PM</td></tr>
+            <tr data-day="5"><td>Friday</td><td>8:00 AM – 5:00 PM</td></tr>
+            <tr data-day="6"><td>Saturday</td><td>Closed</td></tr>
+            <tr data-day="0"><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+        <div>
+          <div class="info-block">
+            <div class="label">Address</div>
+            <div class="value">10 Coventry St, Belmont<br>Bulawayo, Zimbabwe</div>
+            <a class="dir" href="https://www.google.com/maps/search/?api=1&query=10+Coventry+St+Belmont+Bulawayo+Zimbabwe" target="_blank" rel="noopener">Get directions →</a>
+          </div>
+          <div class="info-block"><div class="label">Phone</div><div class="value"><a href="tel:+263774786743">077 478 6743</a></div></div>
+          <div class="info-block"><div class="label">Email</div><div class="value"><a href="mailto:desk.riverbirch@gmail.com">desk.riverbirch@gmail.com</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-final">
+    <div class="wrap">
+      <div>
+        <h2>Let's plan your site survey.</h2>
+        <p>Send a WhatsApp message with your site details, or call during opening hours.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-sun" href="https://wa.me/263774786743" target="_blank" rel="noopener">Message on WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:+263774786743">Call 077 478 6743</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE FORM -->
+  <section id="quote">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker"><span class="dash"></span>Or send us the details</span>
+        <h2>Book a site survey</h2>
+      </div>
+      <div class="reveal" style="max-width:620px;">
+        <form id="quote-form">
+          <div class="field-row">
+            <div class="field"><label for="q-name">Your name</label><input id="q-name" type="text" required placeholder="e.g. Nkosana Ndlovu"></div>
+            <div class="field"><label for="q-phone">Phone number</label><input id="q-phone" type="tel" required placeholder="e.g. 077 000 0000"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="q-location">Site location</label><input id="q-location" type="text" required placeholder="e.g. Bulawayo, Belmont"></div>
+            <div class="field">
+              <label for="q-service">What do you need?</label>
+              <select id="q-service"><option>Borehole drilling &amp; testing</option><option>Water pumping &amp; storage</option><option>Irrigation system</option><option>Water filtration</option><option>Solar equipment &amp; installation</option><option>Not sure yet</option></select>
+            </div>
+          </div>
+          <div class="field"><label for="q-notes">Tell us about the site</label><textarea id="q-notes" required placeholder="e.g. New borehole for a 4-hectare plot, want irrigation and a solar backup pump..."></textarea></div>
+          <button type="submit" class="btn btn-sun">Request a site survey</button>
+        </form>
+        <div id="quote-success" class="hidden">
+          <h3>Thanks, we've got it.</h3>
+          <p>We'll call you back to arrange a site visit. For anything urgent, call the office directly on 077 478 6743.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="year"></span> River Birch Pvt Ltd, Bulawayo</span>
+    <span>Website concept — draft for review</span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('primaryNav');
+  toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Open/closed in Bulawayo time (CAT, UTC+2, no DST)
+  const hours = {0:null,1:[8,17],2:[8,17],3:[8,17],4:[8,17],5:[8,17],6:null};
+  const cat = new Date(Date.now() + 2*60*60*1000);
+  const day = cat.getUTCDay();
+  const hr = cat.getUTCHours() + cat.getUTCMinutes()/60;
+  const t = hours[day];
+  const isOpen = !!t && hr >= t[0] && hr < t[1];
+  document.getElementById('openStatus').textContent = isOpen ? 'Open now' : 'Closed now';
+  document.querySelectorAll('#hoursTable tr').forEach(r => { if (parseInt(r.dataset.day,10) === day) r.classList.add('today'); });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  const form = document.getElementById('quote-form');
+  const success = document.getElementById('quote-success');
+  form.addEventListener('submit', (e) => { e.preventDefault(); form.classList.add('hidden'); success.classList.remove('hidden'); });
+</script>
+</body>
+</html>
